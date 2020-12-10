@@ -23,8 +23,8 @@ scale = Vector2( 1.87451, 0.0583711 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="gaian" type="Sprite" parent="."]
-position = Vector2( 513.73, 298.429 )
-scale = Vector2( 0.342816, 0.298371 )
+position = Vector2( 513.73, 300.952 )
+scale = Vector2( 0.342816, 0.300894 )
 texture = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="gaian"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lake.svg-f66c6284281cae749310e69faf805df0.stex"
+path="res://.import/lake.svg-15a49348c011927227fcd6a914198dc0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Assets/lake.svg"
-dest_files=[ "res://.import/lake.svg-f66c6284281cae749310e69faf805df0.stex" ]
+source_file="res://Scenes/Lvl1/lake.svg"
+dest_files=[ "res://.import/lake.svg-15a49348c011927227fcd6a914198dc0.stex" ]
 
 [params]
 

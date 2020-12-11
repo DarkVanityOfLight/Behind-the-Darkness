@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Lvl1/Lvl1.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Lvl1/lake.svg" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -141.119 ]
+}
+
+[node name="lake" type="Sprite" parent="."]
+position = Vector2( 514.663, 302.526 )
+scale = Vector2( 0.334435, 0.28842 )
+texture = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = -3.0
+margin_top = 494.0
+margin_right = 1013.0
+margin_bottom = 599.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 508.0
+margin_top = 52.0
+margin_right = 508.0
+margin_bottom = 52.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )

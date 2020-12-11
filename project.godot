@@ -20,6 +20,7 @@ config/name="Game"
 [autoload]
 
 MainController="*res://MainController.tscn"
+GuiController="*res://GUIController.tscn"
 
 [rendering]
 

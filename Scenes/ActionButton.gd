@@ -6,6 +6,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_Control_pressed():
-	var choosen = self.get_meta("action")
-	var new_situation:int = MainController.get_next_situation_from_action(choosen)
-	MainController.change_current_situation(new_situation)
+	var choosen:int = get_meta("action")
+	var san = MainController.perform_action(choosen)
+	MainController.change_sanity(san)
+	self.disabled = true

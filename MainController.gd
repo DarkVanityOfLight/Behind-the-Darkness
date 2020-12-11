@@ -1,4 +1,5 @@
 extends Node
+signal new_situation
 
 const actions = [
 	# At the lake
@@ -123,12 +124,70 @@ var next_situations = [
 	[0, 0, 0, 0, 0, 0, 0, 17, 0],# In the castle (Insane and sat around without amulete)
 	[0, 0, 0, 0, 0, 0, 0, 18, 0],# In the castle (Semisane and sat around without amulete)
 	]
+	
+const reward = [
+	# At the lake
+	[0, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (No actions)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Looked at shadow)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Threw stone)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Threw stone and looked at shadow)
+	# At the forest
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# At the forest (No action)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# At the forest (Searched for map)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# At the forest (Walked around)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# At the forest (Walked around and searched for map)
+	# On the hill
+	# TODO Set action according to sanity
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# On the hill (No action)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0], # On the hill(Took amulete)
+	# In the castle
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and no action with amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and no action with amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and no action with amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and no action without amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and no action without amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and no action without amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and took orb without amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and took orb without amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and took orb without amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and took orb with amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and took orb with amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and took orb with amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and sat around with amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and sat around with amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and sat around with amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and sat around without amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and sat around without amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and sat around without amulete)
+	]
 
 var sanity: int = 100
 
+var current_situation = init_situation
+
+func get_actions_for_situation(situation: int):
+	return actions_in_situations[situation]
+
+func get_next_situation_from_action_and_situation(current_situation, action):
+	var next_situation = next_situations[current_situation][action]
+	return next_situation
+	
+func get_next_situation_from_action(action:int) -> int:
+	var next_situation = next_situations[current_situation][action]
+	return next_situation
+
+func change_sanity(amount: int):
+	sanity += amount
+
+func perform_action(a):
+	var san = reward[current_situation][a]
+	current_situation = next_situations[current_situation][a]
+	emit_signal("new_situation")
+	return san
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 

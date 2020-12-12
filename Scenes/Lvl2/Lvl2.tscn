@@ -1,3 +1,38 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Lvl1/Lvl1.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Lvl2/Assets/forest.png" type="Texture" id=2]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 353.183 ],
+"_edit_vertical_guides_": [ -141.119, 473.589 ]
+}
+
+[node name="lake" type="Sprite" parent="."]
+position = Vector2( 513.604, 304.645 )
+scale = Vector2( 1.27471, 1.13122 )
+texture = ExtResource( 2 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = -3.0
+margin_top = 494.0
+margin_right = 1013.0
+margin_bottom = 599.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 508.0
+margin_top = 52.0
+margin_right = 508.0
+margin_bottom = 52.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Titlescreen/Assets/ayalena/Ayalena.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Light2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Titlescreen/Assets/LightTex1.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -35,3 +37,8 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Light2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 186.254, 56.5861 )
+scale = Vector2( 0.248039, 0.0719611 )
+texture = ExtResource( 3 )

@@ -8,7 +8,7 @@ const actions = [
 	"Throw a stone at the shadow",#1
 	"Keep walking",#2
 	# At the forest
-	"Search for map",#3
+	"Search around",#3
 	"Walk around",#4
 	"Follow the map",#5
 	"Follow the weird noises",#6

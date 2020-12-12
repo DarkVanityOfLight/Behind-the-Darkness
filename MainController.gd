@@ -1,9 +1,10 @@
 extends Node
 signal new_situation
+signal sanity_changed
 
 const actions = [
 	# At the lake
-	"Look at shadow",#0
+	"Look at shadows",#0
 	"Throw a stone at the shadow",#1
 	"Keep walking",#2
 	# At the forest
@@ -178,6 +179,7 @@ func get_next_situation_from_action(action:int) -> int:
 
 func change_sanity(amount: int):
 	sanity += amount
+	emit_signal("sanity_changed")
 
 func perform_action(a):
 	var san = reward[current_situation][a]
@@ -189,5 +191,3 @@ func perform_action(a):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-
-

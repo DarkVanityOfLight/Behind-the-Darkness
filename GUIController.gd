@@ -18,11 +18,12 @@ func _ready():
 func _on_MainController_scene_changed():
 	var current_situation = MainController.current_situation
 	remove_child(current_scene)
-	if current_situation >= 3 and current_situation <= 6:
+	print(current_situation)
+	if current_situation >= 4 and current_situation <= 7:
 		current_scene = second_lvl.instance()
-	elif current_situation >= 7 and current_scene <= 9:
+	elif current_situation >= 8 and current_scene <= 9:
 		current_scene = third_lvl.instance()
-	elif current_scene >= 10 and current_scene <= 27:
+	elif current_situation >= 10 and current_situation <= 27:
 		current_scene = fourth_lvl.instance()
 		
 	add_child(current_scene)

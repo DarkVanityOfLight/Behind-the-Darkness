@@ -98,8 +98,8 @@ var next_situations = [
 	[0, 0, 4, 0, 0, 0, 0, 0, 0], # At the lake (Threw stone and looked at shadow)
 	# At the forest
 	[0, 0, 0, 5, 6, 0, 8, 0, 0],# At the forest (No action)
-	[0, 0, 0, 7, 0, 8, 8, 0, 0],# At the forest (Searched for map)
-	[0, 0, 0, 0, 7, 0, 8, 0, 0],# At the forest (Walked around)
+	[0, 0, 0, 0, 7, 8, 8, 0, 0],# At the forest (Searched for map)
+	[0, 0, 0, 7, 7, 0, 8, 0, 0],# At the forest (Walked around)
 	[0, 0, 0, 0, 0, 8, 8, 0, 0],# At the forest (Walked around and searched for map)
 	# On the hill
 	# TODO Set action according to sanity

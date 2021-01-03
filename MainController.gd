@@ -128,15 +128,15 @@ var next_situations = [
 	
 const reward = [
 	# At the lake
-	[0, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (No actions)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Looked at shadow)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Threw stone)
+	[-100, -100, 0, 0, 0, 0, 0, 0, 0], # At the lake (No actions)
+	[0, -100, 0, 0, 0, 0, 0, 0, 0], # At the lake (Looked at shadow)
+	[-100, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Threw stone)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Threw stone and looked at shadow)
 	# At the forest
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],# At the forest (No action)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],# At the forest (Searched for map)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],# At the forest (Walked around)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],# At the forest (Walked around and searched for map)
+	[0, 0, 0, -50, -100, 0, 0, 0, 0],# At the forest (No action)
+	[0, 0, 0, 0, -100, 200, -100, 0, 0],# At the forest (Searched for map)
+	[0, 0, 0, 0, -50, 0, -100, 0, 0],# At the forest (Walked around)
+	[0, 0, 0, 0, 0, 200, -100, 0, 0],# At the forest (Walked around and searched for map)
 	# On the hill
 	# TODO Set action according to sanity
 	[0, 0, 0, 0, 0, 0, 0, 0, 0],# On the hill (No action)

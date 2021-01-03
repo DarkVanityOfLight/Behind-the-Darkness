@@ -162,7 +162,7 @@ const reward = [
 	[0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and sat around without amulete)
 	]
 
-var sanity: int = 100
+var sanity: int = 1000
 
 var current_situation = init_situation
 

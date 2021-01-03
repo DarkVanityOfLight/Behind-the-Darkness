@@ -11,7 +11,11 @@ func _ready():
 	self.value = 100
 
 func _on_TextureProgress_value_changed(value):
-	if value < 99:
+	if value < 999:
 		$End.hide()
 	if value == 0:
-		$End.hide()
+		$Start.hide()
+	if value > 999:
+		$End.show()
+	if value > 0:
+		$Start

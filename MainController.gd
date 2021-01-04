@@ -66,8 +66,8 @@ const actions_in_situations = [
 	[3, 6],# At the forest (Walked around)
 	[5, 6],# At the forest (Walked around and searched for map)
 	# On the hill
-	[7, 4],# On the hill (No action)
-	[4], # On the hill(Took amulete)
+	[7, 2],# On the hill (No action)
+	[2], # On the hill(Took amulete)
 	# In the castle
 	[8, 9],# In the castle (Sane and no action with amulet)
 	[8, 9],# In the castle (Insane and no action with amulet)
@@ -103,7 +103,7 @@ var next_situations = [
 	[0, 0, 0, 0, 0, 8, 8, 0, 0],# At the forest (Walked around and searched for map)
 	# On the hill
 	# TODO Set action according to sanity
-	[0, 0, 0, 0, 0, 0, 0, 0, 0],# On the hill (No action)
+	[0, 0, 0, 0, 0, 0, 0, 9, 0],# On the hill (No action)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0], # On the hill(Took amulete)
 	# In the castle
 	[0, 0, 0, 0, 0, 0, 0, 19, 25],# In the castle (Sane and no action with amulet)

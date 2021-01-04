@@ -214,8 +214,6 @@ func perform_action(a):
 			next_situations[current_situation][a] = 11
 
 	current_situation = next_situations[current_situation][a]
-	print("Next situation")
-	print(current_situation)
 	if current_situation in end_situations:
 		emit_signal("end_game")
 	else:

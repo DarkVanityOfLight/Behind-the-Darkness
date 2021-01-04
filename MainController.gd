@@ -181,9 +181,38 @@ func change_sanity(amount: int):
 	sanity += amount
 	emit_signal("sanity_changed")
 
+# Sane sanity >= 750
+# Semi 750 > sanity > 450
+# Insane 0 < sanity < 450
+
 func perform_action(a):
 	var san = reward[current_situation][a]
+	
+	
+	if current_situation == 8 and a == 2:
+		if sanity >= 750:
+			# Sane
+			next_situations[current_situation][a] = 13
+		if sanity < 750  and sanity > 450:
+			# Semi Sane
+			next_situations[current_situation][a] = 15
+		if sanity < 450:
+			# Insane
+			next_situations[current_situation][a] = 14
+			
+	if current_situation == 9 and a == 2:
+		if sanity >= 750:
+			# Sane
+			next_situations[current_situation][a] = 10
+		if sanity < 750  and sanity > 450:
+			# Semi Sane
+			next_situations[current_situation][a] = 12
+		if sanity < 450:
+			# Insane
+			next_situations[current_situation][a] = 11
+	
 	current_situation = next_situations[current_situation][a]
+	
 	emit_signal("new_situation")
 	return san
 	

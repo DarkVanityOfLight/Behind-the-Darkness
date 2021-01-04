@@ -1,6 +1,7 @@
 extends Node
 signal new_situation
 signal sanity_changed
+signal end_game
 
 const actions = [
 	# At the lake
@@ -210,10 +211,14 @@ func perform_action(a):
 		if sanity < 450:
 			# Insane
 			next_situations[current_situation][a] = 11
-	
+
 	current_situation = next_situations[current_situation][a]
-	
-	emit_signal("new_situation")
+	print("Next situation")
+	print(current_situation)
+	if current_situation in end_situations:
+		emit_signal("end_game")
+	else:
+		emit_signal("new_situation")
 	return san
 	
 

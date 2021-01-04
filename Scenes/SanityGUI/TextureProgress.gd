@@ -10,6 +10,7 @@ extends TextureProgress
 func _ready():
 	self.value = 100
 
+# Make sure that the start and end texture are hiden/shown
 func _on_TextureProgress_value_changed(value):
 	if value < 999:
 		$End.hide()

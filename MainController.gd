@@ -168,30 +168,35 @@ var sanity: int = 1000
 
 var current_situation = init_situation
 
+# Get all possible action for a given situation
 func get_actions_for_situation(situation: int):
 	return actions_in_situations[situation]
 
+# Get the next situation from and situation and an possible action
 func get_next_situation_from_action_and_situation(current_situation, action):
 	var next_situation = next_situations[current_situation][action]
 	return next_situation
-	
+
+# Get the next situation for an action from the current situation
 func get_next_situation_from_action(action:int) -> int:
 	var next_situation = next_situations[current_situation][action]
 	return next_situation
 
+# Change the sanity by @amount
 func change_sanity(amount: int):
 	sanity += amount
+	# Emit a signal so @SanityGUI/Sanity.gd knows to change its value
 	emit_signal("sanity_changed")
 
-# Sane sanity >= 750
-# Semi 750 > sanity > 450
-# Insane 0 < sanity < 450
-
+# Perform the action a
 func perform_action(a):
+	# Get the sanity that the action will reward
 	var san = reward[current_situation][a]
 	
-	
+	# Situation 8 and 9 are special because the outcome of the Keep walking action
+	# will change if the sanity is high or low
 	if current_situation == 8 and a == 2:
+		# Check the sanity and the outcome of the situation according to that
 		if sanity >= 750:
 			# Sane
 			next_situations[current_situation][a] = 13
@@ -213,14 +218,13 @@ func perform_action(a):
 			# Insane
 			next_situations[current_situation][a] = 11
 
+	# Set the new Situation
 	current_situation = next_situations[current_situation][a]
+	# If the current situation is an end situation emit the send signal
+	# otherwise emit a new situation signal
 	if current_situation in end_situations:
 		emit_signal("end_game")
 	else:
 		emit_signal("new_situation")
 	return san
 	
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass

@@ -14,6 +14,7 @@ func _ready():
 	add_child(current_scene)
 	current_scene.get_node("gaian/Button").connect("pressed", self, "_start_game")
 	MainController.connect("new_situation", self, "_on_MainController_scene_changed")
+	MainController.connect("end_game", self, "_on_MainController_end_game")
 
 func _on_MainController_scene_changed():
 	var current_situation = MainController.current_situation
@@ -24,8 +25,16 @@ func _on_MainController_scene_changed():
 		current_scene = third_lvl.instance()
 	elif current_situation >= 10 and current_situation <= 27:
 		current_scene = fourth_lvl.instance()
-		
+		# Hide light cuz of some weird stuff happening
+		san_holder.get_node("SanityControll").get_node("Light2D").enabled = false
+	
 	add_child(current_scene)
+	
+func _on_MainController_end_game():
+	var end_san = MainController.sanity
+	for n in get_children():
+		remove_child(n)
+		n.queue_free()
 	
 func _start_game():
 	remove_child(current_scene)

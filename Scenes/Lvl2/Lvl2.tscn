@@ -3,8 +3,6 @@
 [ext_resource path="res://Scenes/LvlController.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Lvl2/Assets/forest.png" type="Texture" id=2]
 
-
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -13,8 +11,8 @@ __meta__ = {
 }
 
 [node name="lake" type="Sprite" parent="."]
-position = Vector2( 513.604, 304.645 )
-scale = Vector2( 1.27471, 1.13122 )
+position = Vector2( 513.604, 301.308 )
+scale = Vector2( 1.30474, 1.15877 )
 texture = ExtResource( 2 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

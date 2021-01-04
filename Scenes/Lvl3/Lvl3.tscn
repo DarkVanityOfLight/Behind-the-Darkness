@@ -1,27 +1,41 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Lvl3/Assets/hill.svg" type="Texture" id=1]
 [ext_resource path="res://Scenes/LvlController.gd" type="Script" id=2]
-
-
+[ext_resource path="res://Scenes/Titlescreen/Flicker.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Titlescreen/Assets/light2.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Lvl3/Assets/amulet.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="hill" type="Sprite" parent="."]
-position = Vector2( 456.401, 485.817 )
-scale = Vector2( 0.600956, 0.582222 )
+position = Vector2( 458.226, 494.216 )
+scale = Vector2( 0.627573, 0.616378 )
 texture = ExtResource( 1 )
 offset = Vector2( 89.4125, -319.751 )
+
+[node name="amulet" type="Sprite" parent="."]
+position = Vector2( 129.013, 453.212 )
+rotation = -0.781108
+scale = Vector2( 0.191287, 0.137648 )
+texture = ExtResource( 5 )
+
+[node name="Light2D" type="Light2D" parent="amulet"]
+position = Vector2( 65.8784, 44.242 )
+scale = Vector2( 1.76283, 2.83214 )
+texture = ExtResource( 4 )
+texture_scale = 2.0
+script = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_left = -3.0
-margin_top = 494.0
+margin_top = 492.318
 margin_right = 1013.0
-margin_bottom = 599.0
+margin_bottom = 597.318
 __meta__ = {
 "_edit_use_anchors_": false
 }

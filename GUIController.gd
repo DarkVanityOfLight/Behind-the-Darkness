@@ -7,6 +7,7 @@ var second_lvl = preload("res://Scenes/Lvl2/Lvl2.tscn")
 var third_lvl = preload("res://Scenes/Lvl3/Lvl3.tscn")
 var fourth_lvl = preload("res://Scenes/Lvl4/Lvl4.tscn")
 var sanity_gui_scene = preload("res://Scenes/SanityGUI/Sanity.tscn")
+var end_screen = preload("res://Scenes/EndScreen/EndScreen.tscn")
 
 onready var current_scene = title_screen.instance()
 var sanity_gui = sanity_gui_scene.instance()
@@ -43,6 +44,8 @@ func _on_MainController_end_game():
 	for n in get_children():
 		remove_child(n)
 		n.queue_free()
+	add_child(end_screen.instance())
+	
 
 # Start the game
 func _start_game():

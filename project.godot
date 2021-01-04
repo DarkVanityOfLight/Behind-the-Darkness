@@ -20,8 +20,8 @@ run/main_scene="res://MainController.tscn"
 
 [autoload]
 
-MainController="*res://MainController.tscn"
 GuiController="*res://GUIController.tscn"
+MainController="*res://MainController.tscn"
 
 [rendering]
 

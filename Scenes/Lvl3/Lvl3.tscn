@@ -12,6 +12,9 @@ scale = Vector2( 0.600956, 0.582222 )
 texture = ExtResource( 1 )
 offset = Vector2( 89.4125, -319.751 )
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_left = -3.0
 margin_top = 494.0

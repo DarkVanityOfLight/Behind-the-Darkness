@@ -128,38 +128,38 @@ var next_situations = [
 	
 const reward = [
 	# At the lake
-	[-100, -100, 0, 0, 0, 0, 0, 0, 0], # At the lake (No actions)
+	[-200, -100, 0, 0, 0, 0, 0, 0, 0], # At the lake (No actions)
 	[0, -100, 0, 0, 0, 0, 0, 0, 0], # At the lake (Looked at shadow)
-	[-100, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Threw stone)
+	[-200, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Threw stone)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0], # At the lake (Threw stone and looked at shadow)
 	# At the forest
-	[0, 0, 0, -50, -100, 0, 0, 0, 0],# At the forest (No action)
-	[0, 0, 0, 0, -100, 200, -100, 0, 0],# At the forest (Searched for map)
+	[0, 0, 0, -100, -200, 0, -100, 0, 0],# At the forest (No action)
+	[0, 0, 0, 0, -100, 200, -300, 0, 0],# At the forest (Searched for map)
 	[0, 0, 0, 0, -50, 0, -100, 0, 0],# At the forest (Walked around)
-	[0, 0, 0, 0, 0, 200, -100, 0, 0],# At the forest (Walked around and searched for map)
+	[0, 0, 0, 0, 0, 200, -300, 0, 0],# At the forest (Walked around and searched for map)
 	# On the hill
 	# TODO Set action according to sanity
 	[0, 0, 0, 0, 0, 0, 0, 0, 0],# On the hill (No action)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0], # On the hill(Took amulete)
 	# In the castle
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and no action with amulet)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and no action with amulet)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and no action with amulet)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and no action without amulet)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and no action without amulet)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and no action without amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 100, -100],# In the castle (Sane and no action with amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 800, 50],# In the castle (Insane and no action with amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 400, 0],# In the castle (Semisane and no action with amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 50, -100],# In the castle (Sane and no action without amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 400, 50],# In the castle (Insane and no action without amulet)
+	[0, 0, 0, 0, 0, 0, 0, 0, 200, 0],# In the castle (Semisane and no action without amulet)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and took orb without amulet)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and took orb without amulet)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and took orb without amulet)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and took orb with amulet)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and took orb with amulet)
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and took orb with amulet)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and sat around with amulete)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and sat around with amulete)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and sat around with amulete)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Sane and sat around without amulete)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Insane and sat around without amulete)
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],# In the castle (Semisane and sat around without amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 100, 0],# In the castle (Sane and sat around with amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 800, 0],# In the castle (Insane and sat around with amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 400, 0],# In the castle (Semisane and sat around with amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 50, 0],# In the castle (Sane and sat around without amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 400, 0],# In the castle (Insane and sat around without amulete)
+	[0, 0, 0, 0, 0, 0, 0, 0, 200, 0],# In the castle (Semisane and sat around without amulete)
 	]
 
 const end_situations = [16, 17, 18, 19, 20, 21]
